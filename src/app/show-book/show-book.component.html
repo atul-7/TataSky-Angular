@@ -2,9 +2,9 @@
 <h2>List of Books</h2>
 <table border="1" class="table">
     <tr style="background-color:darkblue; color:white">
-        <th>ID</th><th>Ttile</th><th>Author</th><th>Price</th>
+        <th>ID</th><th>Ttile</th><th>Author</th><th>Price</th><th>Update</th>
     </tr>
     <tr *ngFor="let b of bookService.books" [ngStyle]="{'backgroundColor':b.price>500?'pink':'cyan'}">
-        <td>{{b.id}}</td> <td>{{b.title|shorten:12|uppercase}}</td> <td>{{b.author|shorten:12}}</td> <td>{{b.price|currency:'INR'}}</td>
+        <td>{{b.id}}</td> <td>{{b.title|shorten:20|uppercase}}</td> <td>{{b.author|shorten:12}}</td> <td>{{b.price|currency:'INR'}}</td>
     </tr>
 </table>

@@ -26,6 +26,6 @@ export class AddBookComponent implements OnInit {
     // this.books.push(f.value);
     this.bookService.books.push(f.value);
     console.log(this.book);
-    this.router.navigate(['/add-book']);
+    this.router.navigate(['/show-all']);
   }
 }

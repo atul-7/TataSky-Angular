@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { AddBookComponent } from './add-book/add-book.component';
 import { ShortenPipe } from './shorten.pipe';
 import { ShowBookComponent } from './show-book/show-book.component';
+import { UpdateBookComponent } from './update-book/update-book.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ShowBookComponent } from './show-book/show-book.component';
     MainComponent,
     AddBookComponent,
     ShortenPipe,
-    ShowBookComponent
+    ShowBookComponent,
+    UpdateBookComponent
   ],
   imports: [
     BrowserModule,
