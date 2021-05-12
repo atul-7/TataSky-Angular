@@ -13,7 +13,7 @@ export class MainComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.router.navigate(['/add-book']);
+    //this.router.navigate(['/add-book']);
   }
 
 }

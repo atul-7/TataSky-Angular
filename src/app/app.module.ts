@@ -8,11 +8,13 @@ import { ShowComponent } from './show/show.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddBookComponent } from './add-book/add-book.component';
 import { ShortenPipe } from './shorten.pipe';
 import { ShowBookComponent } from './show-book/show-book.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { BookReactiveComponent } from './book-reactive/book-reactive.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { UpdateBookComponent } from './update-book/update-book.component';
     AddBookComponent,
     ShortenPipe,
     ShowBookComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    ErrorPageComponent,
+    BookReactiveComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

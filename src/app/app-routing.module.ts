@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddBookComponent } from './add-book/add-book.component';
+import { BookReactiveComponent } from './book-reactive/book-reactive.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { ShowBookComponent } from './show-book/show-book.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 
@@ -13,6 +15,18 @@ const routes: Routes = [
   },
   {
     path:'update-book/:id',component:UpdateBookComponent
+  },
+  {
+    path:'book-reactive',component:BookReactiveComponent
+  },
+  {
+    path:'',component:AddBookComponent
+  },
+  {
+    path:'error',component:ErrorPageComponent
+  },
+  {
+    path:'**',redirectTo:'/error'
   }
 ];
 

@@ -1,0 +1,18 @@
+<h2>Add a Book</h2>
+<form class="form-group" [formGroup]='booksForm'>
+    <!-- for id -->
+    <label>ID : </label>
+    <input type="number" name="id" id="id" class="form-control"  [class.is-invalid]="" formControlName="id"/>
+    <!-- for title -->
+    <label>Title : </label> &nbsp; <small *ngIf=""> Title is required</small>
+    <input type="text" name="title" id="title" class="form-control" [class.is-invalid]="" formControlName="title"/>
+    <!-- for author -->
+    <label>Author : </label><small *ngIf=""> Title is required</small>
+    <input type="text" name="author" id="author" class="form-control" [class.is-invalid]="" formControlName="author"/>
+    <!-- for price -->
+    <label>Price : </label>
+    <input type="number" name="price" id="price" class="form-control" formControlName="price"/>
+    <button class="btn btn-success" [disabled]=''>SUBMIT</button>
+</form>
+
+{{[booksForm.value]|json}}
