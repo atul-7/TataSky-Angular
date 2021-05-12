@@ -9,12 +9,17 @@ import { BookService } from '../book-service';
 })
 export class ShowBookComponent implements OnInit {
   bookService: BookService;
+  router:Router
   constructor(bookService: BookService, router :Router) {
     this.bookService = bookService;
+    this.router = router;
     
   }
 
   ngOnInit(): void {
+  }
+  updateBook(id:number) {
+    this.router.navigate(["update-book/" + id]);
   }
 
 }

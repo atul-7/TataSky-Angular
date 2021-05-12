@@ -24,8 +24,13 @@ export class AddBookComponent implements OnInit {
   addBook(f:any) {
     // console.log(f);
     // this.books.push(f.value);
-    this.bookService.books.push(f.value);
-    console.log(this.book);
-    this.router.navigate(['/show-all']);
+    if (this.bookService.idExists(f.value.id)) {
+      alert("Id Already exits");
+    }
+    else {
+      this.bookService.books.push(f.value);
+      console.log(this.book);
+      this.router.navigate(['/show-all']);
+    }
   }
 }
