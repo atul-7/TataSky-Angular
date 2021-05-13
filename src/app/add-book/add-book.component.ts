@@ -9,28 +9,28 @@ import { BookService } from '../book-service';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
-  book: Book;
-  // books: Array<Book>=[];
-  bookService: BookService;
-  router: Router;
-  constructor( bookService: BookService ,router:Router) {
-    this.book = new Book();
-    this.bookService = bookService;
-    this.router = router;
-  }
+  book:Book;
+  //books:Array<Book>=[];
+  bookService:BookService;
+  router:Router;
+  constructor( bookService:BookService, router:Router) {
+    this.book=new Book();
+    this.bookService=bookService;
+    this.router=router;
+   }
 
   ngOnInit(): void {
   }
-  addBook(f:any) {
-    // console.log(f);
-    // this.books.push(f.value);
-    if (this.bookService.idExists(f.value.id)) {
-      alert("Id Already exits");
+  addBook(f:any){
+    //console.log(f);
+    //this.books.push(f.value);
+    if(this.bookService.idExists(f.value.id)){
+      alert('id already exists');
     }
-    else {
+    else{
       this.bookService.books.push(f.value);
       console.log(this.book);
       this.router.navigate(['/show-all']);
-    }
+      }
   }
 }

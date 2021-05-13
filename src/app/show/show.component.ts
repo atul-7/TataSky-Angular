@@ -6,14 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show.component.css']
 })
 export class ShowComponent implements OnInit {
+  trainee1:string="";
   flag = false;
-  trainee1: string="";
   constructor() { }
 
   ngOnInit(): void {
   }
-  fun(trainee:any) {
-    // console.log(trainee);
-    this.trainee1 = trainee;
+  fun(trainee:any){
+    //console.log(trainee);
+    this.trainee1=trainee;
   }
 }

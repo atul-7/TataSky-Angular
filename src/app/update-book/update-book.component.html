@@ -1,16 +1,17 @@
 <h2>Update Book</h2>
-<form class="form-group" (submit)="updateBook(fm.value)" #fm="ngForm">
-    <!-- for id -->
-    <label>ID : </label>
-    <input readonly type="number" name="id" id="id" [(ngModel)]="book.id" ngModel class="form-control" required #bId="ngModel" [class.is-invalid]="bId.invalid" />
-    <!-- for title -->
-    <label>Title : </label> &nbsp; <small *ngIf="bTitle.invalid && bTitle.touched" class="text-danger"> Title is required</small>
-    <input type="text" name="title" id="title" [(ngModel)]="book.title" ngModel class="form-control" required #bTitle="ngModel" [class.is-invalid]="bTitle.invalid && bTitle.touched"/>
-    <!-- for author -->
-    <label>Author : </label>&nbsp;<small *ngIf="bAuthor.invalid && bAuthor.touched" class="text-danger"> Title is required</small>
-    <input type="text" name="author" id="author" [(ngModel)]="book.author" ngModel class="form-control" required #bAuthor="ngModel" [class.is-invalid]="bAuthor.invalid && bAuthor.touched"/>
-    <!-- for price -->
-    <label>Price : </label>
-    <input type="number" name="price" id="price" [(ngModel)]="book.price" ngModel class="form-control" #bPrince="ngModel" />
-    <button class="btn btn-success" [disabled]='!fm.valid'>SUBMIT</button>
+<form (submit)="updateBook(fm.value)" class="form-group" #fm="ngForm">
+    <label>ID</label> 
+    <input readonly type="number" name="id" id="id" [(ngModel)]="book.id" ngModel 
+      class="form-control" required #bId="ngModel" [class.is-invalid]="bId.invalid" />
+    <label>Title</label> &nbsp; <small *ngIf="bTitle.invalid && bTitle.touched" class="text-danger">Title is required</small>
+    <input type="text" name="title" id="title" [(ngModel)]="book.title" ngModel 
+      class="form-control" required #bTitle="ngModel" 
+      [class.is-invalid]="bTitle.invalid && bTitle.touched" />
+    <label>Author</label>
+    <input type="text" name="author" id="author" value="{{book.author}}" ngModel 
+      class="form-control" #bAuthor="ngModel" />
+    <label>Price</label>
+    <input type="number" name="price" id="price" [(ngModel)]="book.price" ngModel 
+      class="form-control" #bPrice="ngModel" />
+    <button class="btn btn-success" [disabled]='!fm.valid'>Submit</button>
 </form>

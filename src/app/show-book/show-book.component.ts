@@ -8,18 +8,17 @@ import { BookService } from '../book-service';
   styleUrls: ['./show-book.component.css']
 })
 export class ShowBookComponent implements OnInit {
-  bookService: BookService;
-  router:Router
-  constructor(bookService: BookService, router :Router) {
-    this.bookService = bookService;
-    this.router = router;
-    
-  }
+  bookService:BookService;
+  router:Router;
+  constructor( bookService:BookService, router:Router) {
+    this.bookService=bookService;
+    this.router=router;
+   }
 
   ngOnInit(): void {
   }
-  updateBook(id:number) {
-    this.router.navigate(["update-book/" + id]);
+  updateBook(id:number){
+    this.router.navigate(['update-book/'+id]);
   }
 
 }

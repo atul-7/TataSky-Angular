@@ -1,0 +1,23 @@
+<h3>Enter Student ID</h3>
+<input type="text" #tStudent> 
+<br>
+<button class="btn btn-primary" (click)="studentInfo(tStudent.value)">FETCH INFO</button>
+<br><br>
+<div *ngIf="student.id!=0; else elseBlock">
+  {{student|json}}
+  {{student.courses|json}}
+ <ul>
+     <li>ID: {{student.id}}</li>
+     <li>Name: {{student.firstName}} {{student.lastName}}</li>
+     <li>Age: {{student.age}}</li>
+     <ul>
+        Courses:
+       <li *ngFor="let course of student.courses">
+          ID:{{course.id}} {{course.name}} Fee: {{course.fee}}
+       </li>
+    </ul>
+ </ul>
+</div>
+<div>
+  <ng-template #elseBlock> No Data available</ng-template>
+</div>

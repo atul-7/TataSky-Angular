@@ -9,24 +9,22 @@ import { BookService } from '../book-service';
   styleUrls: ['./update-book.component.css']
 })
 export class UpdateBookComponent implements OnInit {
-  book: Book;
-  constructor(private route:ActivatedRoute,private bookService:BookService) {
-    this.book = new Book;
-  }
+  book:Book;
+  constructor(private route:ActivatedRoute, private bookService:BookService) {
+    this.book=new Book();
+   }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
-    this.book = this.bookService.getBook(id);
+    this.book=this.bookService.getBook(id);
     console.log(this.book);
   }
-
-  updateBook(book:Book ){
-    if (this.bookService.updatedBook(book)) {
-      alert('Book Updated Successfully');
+  updateBook(book:Book){
+    if(this.bookService.updatedBook(book)){
+       alert('Book updated successfully');
     }
-    else {
-      alert('Book not found');
+    else{
+      alert("Book not found");
     }
   }
-
 }

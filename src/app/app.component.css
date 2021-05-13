@@ -1,7 +1,7 @@
-header,footer{
-    background-color: skyblue;
+header, footer{
+    background-color: lightblue;
     min-height: 100px;
 }
-main{
+main {
     min-height: 300px;
 }
