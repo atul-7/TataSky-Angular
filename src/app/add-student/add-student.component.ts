@@ -13,7 +13,7 @@ export class AddStudentComponent implements OnInit {
   service:BookService
   constructor(service:BookService) {
     this.service = service;
-   }
+  }
 
   ngOnInit(): void {
   }

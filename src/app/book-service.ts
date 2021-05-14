@@ -54,18 +54,18 @@ export class BookService{
             let stud = new Student(s.id,s.firstName,s.lastName,s.age,s.courses);
             console.log('all----');
             if(s.courses.length>0){
-               for(let cv of s.courses){
+              for(let cv of s.courses){
                 console.log('~'+ cv.id);
                 stud.courseList.push(cv.name);
-               }
+              }
             }
             this.students.push(stud);
-         }
-       }
-       addStudent(stud: Student) {
+        }
+      }
+      addStudent(stud: Student) {
         this.students.push(stud); 
         this.sendPost(stud);
-   
+  
       }
     sendPost(stud: any) {
         const headers = { 'content-type': 'application/json'};
@@ -74,12 +74,12 @@ export class BookService{
         const body=JSON.stringify(stud);  
         console.log('---------');
         console.log(body);
-         this.http.post('http://localhost:8086/students/add',body,{'headers':headers}).subscribe(
-           data=>{
-             let dataVal = Object.values(data);
-             stud.id=dataVal[0];
-           }
-         );
+        this.http.post('http://localhost:8086/students/add',body,{'headers':headers}).subscribe(
+          data=>{
+            let dataVal = Object.values(data);
+            stud.id=dataVal[0];
+          }
+        );
         }
-     
+
   }
