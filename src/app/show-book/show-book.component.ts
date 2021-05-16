@@ -13,7 +13,7 @@ export class ShowBookComponent implements OnInit {
   constructor( bookService:BookService, router:Router) {
     this.bookService=bookService;
     this.router=router;
-   }
+  }
 
   ngOnInit(): void {
   }
