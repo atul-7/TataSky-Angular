@@ -45,6 +45,7 @@ import { ShowPopularPackComponent } from './show-popular-pack/show-popular-pack.
 import { RechargeMainComponent } from './recharge-main/recharge-main.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AdminMainComponent } from './admin-main/admin-main.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,7 @@ import { AdminMainComponent } from './admin-main/admin-main.component';
     ShowPopularPackComponent,
     RechargeMainComponent,
     AdminMainComponent,
-    LoginPageComponent
+    LoginPageComponent,ErrorPageComponent
 
   ],
   imports: [

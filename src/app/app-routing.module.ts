@@ -12,6 +12,7 @@ import { CountRechargeComponent } from './count-recharge/count-recharge.componen
 import { DeleteAccountComponent } from './delete-account/delete-account.component';
 import { DeletePackComponent } from './delete-pack/delete-pack.component';
 import { DescRechargeComponent } from './desc-recharge/desc-recharge.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { FindAccountComponent } from './find-account/find-account.component';
 import { HomeMainComponent } from './home-main/home-main.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -145,6 +146,16 @@ const routes: Routes = [
 }, 
 {
 path:'login-page',component:LoginPageComponent
+},
+{
+  path:'', component:HomeMainComponent
+},
+{
+  path:'error', component:ErrorPageComponent
+}
+,
+{
+  path:'**', redirectTo:'/error'
 }
 ];
 
