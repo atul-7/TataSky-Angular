@@ -1,0 +1,19 @@
+<br><br><br><br>
+<h2>Accounts Count in Date Range</h2>
+<form class="form-group" [formGroup]="accountForm" (ngSubmit)="fetch(accountForm.value)">
+    <label> Start Date</label> &nbsp;
+    <input type="date" required  name="startDate" id="startDate" class="form-control" formControlName="startDate" [class.is-invalid]="accountForm.get('startDate')?.invalid" /><br>
+    <label> End Date</label> &nbsp;
+    <input type="date" required name="endDate" id="endDate" class="form-control" formControlName="endDate" [class.is-invalid]="accountForm.get('endDate')?.invalid" /><br>
+    <button class="btn btn-success" [disabled]='accountForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="createdFlag" >
+<div *ngIf="count>0; else elseBlock" >
+    <br>
+    <p>Number Of Accounts:{{count}}</p>
+    </div>
+
+    <div>
+        <ng-template #elseBlock> No Data Available </ng-template>
+    </div>
+</div>

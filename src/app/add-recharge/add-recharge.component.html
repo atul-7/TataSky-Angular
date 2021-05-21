@@ -1,0 +1,24 @@
+<br><br><br><br>
+<h2>New Recharge</h2>
+<form class="form-group" [formGroup]="rechargeForm" (ngSubmit)="add(rechargeForm.value)">
+<label> Account ID</label> &nbsp;
+<span *ngIf="rechargeForm.get('accountId')?.touched">
+    <small *ngIf="rechargeForm.get('accountId')?.errors?.required" class="text-danger">ID is required</small>
+    <small *ngIf="rechargeForm.get('accountId')?.errors?.min" class="text-danger">ID should be greater than 0</small>
+</span>
+<input type="number" required name="accountId" id="accountId" class="form-control" formControlName="accountId" [class.is-invalid]="rechargeForm.get('accountId')?.invalid" /><br>
+<label>Pack Id</label>
+<input type="number" required name="pckid" id="pckid" class="form-control" formControlName="packId"  [class.is-invalid]="" /><br>
+<button class="btn btn-success" [disabled]='rechargeForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="createdFlag" >
+    <div *ngIf="newRecharge.id>0; else elseBlock" > 
+    Recharge Done Successfully!!!<br>
+    for {{newRecharge.account.userTo.firstName}} {{newRecharge.account.userTo.lastName}} of {{newRecharge.pack.cost|currency:'INR'}} <br>
+    Your Pack {{newRecharge.pack.planName}} is now valid for {{newRecharge.pack.daysValidity}} days.<br>
+    Your Recharge Id is {{newRecharge.id}}.
+    </div>
+    <div>
+    <ng-template #elseBlock> Enter Correct Credentials</ng-template>
+    </div>
+</div>    

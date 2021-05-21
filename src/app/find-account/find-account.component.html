@@ -1,0 +1,65 @@
+
+<br>
+<br>
+<br>
+<h2>Find Account</h2>
+<form class="form-group" [formGroup]="serviceForm" (ngSubmit)="accInfo(serviceForm.value)">
+<label> Account ID</label> &nbsp;
+<span *ngIf="serviceForm.get('accountId')?.touched">
+    <small *ngIf="serviceForm.get('accountId')?.errors?.required" class="text-danger">ID is required</small>
+    <small *ngIf="serviceForm.get('accountId')?.errors?.min" class="text-danger">ID should be greater than 1</small>
+</span>
+<input type="number" required name="accountId" id="accountId" class="form-control" formControlName="accountId" [class.is-invalid]="serviceForm.get('accountId')?.invalid" /><br>
+<button class="btn btn-success" [disabled]='serviceForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="account.accountId!=0; else elseBlock">
+
+    <ul>
+        <li>ID: {{account.accountId}}</li>
+        <li>Date: {{account.registeredDate}}</li>
+        <ul>
+                User:
+                <ul>
+                    <li>ID: {{account.userTo.id}}</li>
+                    <li>Username: {{account.userTo.username}} Name: {{account.userTo.firstName}} {{account.userTo.lastName}}  Role: {{account.userTo.role}}</li>
+                </ul>
+        </ul>
+        <ul>
+                Recharges:
+            <li *ngFor="let recharge of account.recharges">
+                <ul>
+                    <li>ID: {{recharge.id}}</li>
+                    <li>daysValidity: {{recharge.daysValidity}}</li>
+                    <li>planDescription: {{recharge.planDescription}}</li>
+                    <li>planName: {{recharge.planName}}</li>
+                    <li>purchasedDate: {{recharge.purchasedDate}}</li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+                Service Requests:
+            <li *ngFor="let requests of account.requests">
+                <ul>
+                    <li>ID: {{requests.id}}</li>
+                    <li>requestedDate: {{requests.requestedDate}}</li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+                Pack:
+            
+                <ul>
+                    <li>ID: {{account.currentPack.id}}</li>
+                    <li>cost: {{account.currentPack.cost}}</li>
+                    <li>daysValidity: {{account.currentPack.daysValidity}}</li>
+                    <li>description: {{account.currentPack.description}}</li>
+                    <li>planName: {{account.currentPack.planName}}</li>
+                    <li>channels: {{account.currentPack.channels}}</li>
+                </ul>
+          
+        </ul>
+    </ul>
+</div>
+<div>
+    <ng-template #elseBlock> No Data available</ng-template>
+</div>

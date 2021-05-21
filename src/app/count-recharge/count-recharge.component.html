@@ -1,0 +1,19 @@
+<br><br><br><br>
+<h2>Recharges Count</h2>
+<form class="form-group" [formGroup]="rechargeForm" (ngSubmit)="fetch(rechargeForm.value)">
+    <label> Account ID</label> &nbsp;
+    <span *ngIf="rechargeForm.get('accountId')?.touched">
+        <small *ngIf="rechargeForm.get('accountId')?.errors?.required" class="text-danger">ID is required</small>
+        <small *ngIf="rechargeForm.get('accountId')?.errors?.min" class="text-danger">ID should be greater than 0</small>
+    </span>
+    <input type="number" required name="accountId" id="accountId" class="form-control" formControlName="accountId" [class.is-invalid]="rechargeForm.get('accountId')?.invalid" /><br>
+    <button class="btn btn-success" [disabled]='rechargeForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="createdFlag" >
+<div *ngIf="count>0; else elseBlock" >
+<p>Total {{count}} Recharges were done in this Account</p>
+</div>
+<div>
+    <ng-template #elseBlock> No Data Available for this Account </ng-template>
+</div>
+</div>

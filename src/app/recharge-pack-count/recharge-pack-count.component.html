@@ -1,0 +1,19 @@
+<br><br><br><br>
+<h2>Recharges List</h2>
+<form class="form-group" [formGroup]="rechargeForm" (ngSubmit)="fetch(rechargeForm.value)">
+    <label> Pack ID</label> &nbsp;
+    <span *ngIf="rechargeForm.get('packId')?.touched">
+        <small *ngIf="rechargeForm.get('packId')?.errors?.required" class="text-danger">ID is required</small>
+        <small *ngIf="rechargeForm.get('packId')?.errors?.min" class="text-danger">ID should be greater than 0</small>
+    </span>
+    <input type="number" required name="packId" id="packId" class="form-control" formControlName="packId" [class.is-invalid]="rechargeForm.get('packId')?.invalid" /><br>
+    <button class="btn btn-success" [disabled]='rechargeForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="createdFlag" >
+<div *ngIf="count>0; else elseBlock" >
+<p>Total {{count}} Recharges are done for this Pack</p>
+</div>
+<div>
+    <ng-template #elseBlock> No Data Available </ng-template>
+</div>
+</div>

@@ -1,0 +1,25 @@
+<!-- <p>show-packbydays-validity works!</p> -->
+<br><br>
+
+<h1 class="lst">List of Packs By DaysValidity(ASC)</h1>
+<br>
+<table border="1">
+    <tr>
+      <th><h3 class="dyv">ID</h3></th>
+      <th><h3 class="dyv">Cost</h3></th>
+      <th><h3 class="dyv">DaysValidity</h3></th>
+      <th><h3 class="dyv">Description</h3></th>
+      <th><h3 class="dyv">PlanName</h3></th>
+      <th><h3 class="dyv">Channels</h3></th>
+    </tr>
+    <tr *ngFor="let p of pack">
+      <td><h5 class="idc">{{p.id}}</h5></td>
+      <td><h5 class="cst">{{p.cost}}</h5></td>
+      <td><h5 class="idc">{{p.daysValidity}}</h5></td>
+      <td><h5 class="cst">{{p.description}}</h5></td>
+      <td><h5 class="idc">{{p.planName}}</h5></td>
+      <td><h5 class="cst">{{p.channels}}</h5></td>
+    </tr>
+</table>
+<br>
+<br>

@@ -1,0 +1,25 @@
+<br><br><br><br><br>
+
+  <h3>FIND USER BY ID</h3>
+  <form class="form-group" [formGroup]="userForm" (ngSubmit)="userInfo(userForm.value)">
+    <label> USER ID</label> &nbsp;
+    <span *ngIf="userForm.get('userId')?.touched">
+        <small *ngIf="userForm.get('userId')?.errors?.required" class="text-danger">ID is required</small>
+        <small *ngIf="userForm.get('userId')?.errors?.min" class="text-danger">ID should be greater than 1</small>
+    </span>
+    <input type="number" required name="userId" id="accountId" class="form-control" formControlName="userId" [class.is-invalid]="userForm.get('userId')?.invalid" /><br>
+    <button class="btn btn-success" [disabled]='userForm?.invalid'>Submit</button><br>
+    </form>
+    <br>
+    <div *ngIf=createdFlag>
+  <div *ngIf="user.id!=0; else elseBlock">
+   <ul>
+       <li>ID: {{user.id}}</li>
+       <li>Name: {{user.firstName}}  {{user.lastName}}</li>
+       <li>UserName: {{user.username}} </li>
+   </ul>
+  </div>
+</div>
+  <div>
+    <ng-template #elseBlock> No Data available</ng-template>
+  </div>

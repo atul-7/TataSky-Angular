@@ -1,0 +1,21 @@
+<br><br><br><br>
+<h3>FIND USER BY USERNAME</h3>
+  <form class="form-group" [formGroup]="userForm" (ngSubmit)="userInfo(userForm.value)">
+    <label> USERNAME</label> &nbsp;
+    <span *ngIf="userForm.get('serviceUsername')?.touched">
+        <small *ngIf="userForm.get('serviceUsername')?.errors?.required" class="text-danger">Username is required</small>
+    </span>
+    <input type="text" required name="serviceUsername" id="serviceUsername" class="form-control" formControlName="serviceUsername" [class.is-invalid]="userForm.get('serviceUsername')?.invalid" /><br>
+    <button class="btn btn-success" [disabled]='userForm?.invalid'>Submit</button><br>
+    </form>
+    <div *ngIf=createdFlag>
+  <div *ngIf="user.username!=''; else elseBlock">
+   <ul>
+       <li>ID: {{user.id}}</li>
+       <li>Name: {{user.firstName}}</li>
+       <li>UserName: {{user.username}}</li>
+   </ul>
+  </div></div>
+  <div>
+    <ng-template #elseBlock> No Data available</ng-template>
+  </div>

@@ -1,0 +1,32 @@
+<br><br><br><br><br>
+<!-- 
+  <h3>Enter UserID To Delete</h3>
+  <input type="number" #tServiceRequest> 
+  <br><br>
+  <button class="btn btn-primary" (click)="serviceInfo(tServiceRequest.value)">FETCH INFO</button>
+  <br><br>
+  <div *ngIf="user.id!=0; else elseBlock">
+   <ul>
+       Data Deleted
+   </ul>
+  </div>
+  <div>
+    <ng-template #elseBlock> No Data available</ng-template>
+  </div>  -->
+  <h2>Delete User</h2>
+<form class="form-group" [formGroup]="userForm" (ngSubmit)="userInfo(userForm.value)">
+<label> User ID</label> &nbsp;
+<span *ngIf="userForm.get('userId')?.touched">
+    <small *ngIf="userForm.get('userId')?.errors?.required" class="text-danger">ID is required</small>
+    <small *ngIf="userForm.get('userId')?.errors?.min" class="text-danger">ID should be greater than 1</small>
+</span>
+<input type="number" required name="userId" id="userId" class="form-control" formControlName="userId" [class.is-invalid]="userForm.get('userId')?.invalid" /><br>
+<button class="btn btn-success" [disabled]='userForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="createdFlag; else elseBlock">
+  Deleted user Successfully!!!  
+</div>
+ <div>
+   <ng-template #elseBlock> No Data available</ng-template>
+ </div>
+ 

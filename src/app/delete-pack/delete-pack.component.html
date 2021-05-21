@@ -1,0 +1,24 @@
+<!-- <p>delete-pack works!</p> -->
+<br><br>
+<form class="form-group" [formGroup]="packForm" (ngSubmit)="packDelInfo(packForm.value)">
+<label><h3 class="lst">Enter Pack ID</h3></label><br><br>
+<span *ngIf="packForm.get('id')?.touched">
+  <small *ngIf="packForm.get('id')?.errors?.required" class="text-danger">ID is required</small>
+  <small *ngIf="packForm.get('id')?.errors?.min" class="text-danger">ID should be of 1 or more digits</small>
+</span> 
+<input type="text" required name="id" id="id" class="form-control" formControlName="id" #tinput/> 
+<br>
+<br>
+<button class="btn btn-primary" (click)="packDelInfo(packForm.value)">DELETE INFO</button>
+</form>
+<br><br><br>
+<div *ngIf="createdFlag"  >
+  <div *ngIf="pack.id!=0; else elseBlock">
+    <h4 class="del">Pack With ID:{{tinput.value}}, Deleted Successfully</h4>
+  </div>
+  <div>
+    <ng-template #elseBlock>No Data Available</ng-template>
+  </div>
+</div>
+<br>
+<br>

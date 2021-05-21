@@ -1,0 +1,17 @@
+<br><br><br><br>
+<h2>Recharges Revenue in Date Range</h2>
+<form class="form-group" [formGroup]="rechargeForm" (ngSubmit)="fetch(rechargeForm.value)">
+    <label> Start Date</label> &nbsp;
+    <input type="date" required  name="startDate" id="startDate" class="form-control" formControlName="startDate" [class.is-invalid]="rechargeForm.get('startDate')?.invalid" /><br>
+    <label> End Date</label> &nbsp;
+    <input type="date" required name="endDate" id="endDate" class="form-control" formControlName="endDate" [class.is-invalid]="rechargeForm.get('endDate')?.invalid" /><br>
+    <button class="btn btn-success" [disabled]='rechargeForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="createdFlag" >
+<div *ngIf="revenue>0; else elseBlock" >
+    <p>Total Revenue of {{revenue|currency:'INR'}} was generated in this particular Range</p>
+    </div>
+    <div>
+        <ng-template #elseBlock> No Data Available </ng-template>
+    </div>
+</div>

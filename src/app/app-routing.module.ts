@@ -1,49 +1,151 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddBookComponent } from './add-book/add-book.component';
-import { AddStudentComponent } from './add-student/add-student.component';
-import { BookReactiveComponent } from './book-reactive/book-reactive.component';
-import { CovidClientComponent } from './covid-client/covid-client.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
-import { ShowBookComponent } from './show-book/show-book.component';
-import { ShowStudentComponent } from './show-student/show-student.component';
-import { StudentListComponent } from './student-list/student-list.component';
-import { UpdateBookComponent } from './update-book/update-book.component';
+import { AccountmainComponent } from './accountmain/accountmain.component';
+import { AddPackComponent } from './add-pack/add-pack.component';
+import { AddRechargeComponent } from './add-recharge/add-recharge.component';
+import { AddServiceComponent } from './add-service/add-service.component';
+import { AdminMainComponent } from './admin-main/admin-main.component';
+import { CloseRequestComponent } from './close-request/close-request.component';
+import { CountAccountInPeriodComponent } from './count-account-in-period/count-account-in-period.component';
+import { CountAccountsComponent } from './count-accounts/count-accounts.component';
+import { CountRechargeComponent } from './count-recharge/count-recharge.component';
+import { DeleteAccountComponent } from './delete-account/delete-account.component';
+import { DeletePackComponent } from './delete-pack/delete-pack.component';
+import { DescRechargeComponent } from './desc-recharge/desc-recharge.component';
+import { FindAccountComponent } from './find-account/find-account.component';
+import { HomeMainComponent } from './home-main/home-main.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+import { OpenedServiceComponent } from './opened-service/opened-service.component';
+import { PackMainComponent } from './pack-main/pack-main.component';
+import { RechargeInPeriodCountComponent } from './recharge-in-period-count/recharge-in-period-count.component';
+import { RechargeInPeriodRevenueComponent } from './recharge-in-period-revenue/recharge-in-period-revenue.component';
+import { RechargeMainComponent } from './recharge-main/recharge-main.component';
+import { RechargePackCountComponent } from './recharge-pack-count/recharge-pack-count.component';
+import { RechargesInPeriodComponent } from './recharges-in-period/recharges-in-period.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
+import { ServiceMainComponent } from './service-main/service-main.component';
+import { ShowPackGrtAmtComponent } from './show-pack-grt-amt/show-pack-grt-amt.component';
+import { ShowPackbycostComponent } from './show-packbycost/show-packbycost.component';
+import { ShowPackbydaysValidityComponent } from './show-packbydays-validity/show-packbydays-validity.component';
+import { ShowPackbyidComponent } from './show-packbyid/show-packbyid.component';
+import { ShowPopularPackComponent } from './show-popular-pack/show-popular-pack.component';
+import { UpdatePackComponent } from './update-pack/update-pack.component';
+import { UpdateRechargeComponent } from './update-recharge/update-recharge.component';
+import { UserDeleteIdComponent } from './user-delete-id/user-delete-id.component';
+import { UserFindIdComponent } from './user-find-id/user-find-id.component';
+import { UserFindUsernameComponent } from './user-find-username/user-find-username.component';
+import { UserMainComponent } from './user-main/user-main.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 const routes: Routes = [
   {
-    path:'add-book', component:AddBookComponent
+    path:'service-main', component:ServiceMainComponent
   },
   {
-    path:'show-all', component:ShowBookComponent
+    path:'home-main', component:HomeMainComponent
   },
   {
-    path:'update-book/:id', component:UpdateBookComponent
+    path:'add-service', component:AddServiceComponent
   },
   {
-    path:'book-reactive', component:BookReactiveComponent
+    path:'close-service', component:CloseRequestComponent
   },
   {
-    path:'covid-client', component:CovidClientComponent
+    path:'opened-service', component:OpenedServiceComponent
   },
   {
-    path:'show-student', component:ShowStudentComponent
+    path:'find-user', component:UserFindIdComponent
   },
   {
-    path:'add-student', component:AddStudentComponent
+    path:'find-user-username', component:UserFindUsernameComponent 
   },
   {
-    path:'students', component:StudentListComponent
+    path:'delete-userId', component:UserDeleteIdComponent
   },
   {
-    path:'', component:AddBookComponent
+    path:'account-main', component:AccountmainComponent
   },
   {
-    path:'error', component:ErrorPageComponent
+    path:'find-acc', component:FindAccountComponent
   },
   {
-    path:'**', redirectTo:'/error'
-  }
+    path:'user-main', component:UserMainComponent
+  },
+  {
+    path:'register-user', component:RegisterUserComponent
+  },
+  {
+    path:'countInPeriod', component:CountAccountInPeriodComponent
+  },
+  {
+    path:'accountCount', component:CountAccountsComponent
+  },
+  {
+    path:'delete-account', component:DeleteAccountComponent
+  },
+  {
+      path:'user-update', component:UserUpdateComponent
+  },
+  {
+    path:'new-recharge', component:AddRechargeComponent
+},
+{
+  path:'desc-recharge', component:DescRechargeComponent
+},
+{
+  path:'count-recharge', component:CountRechargeComponent
+},
+{
+  path:'recharge-in-period', component:RechargesInPeriodComponent
+},
+{
+  path:'recharge-in-period-revenue',component:RechargeInPeriodRevenueComponent
+},
+{
+  path:'recharge-pack-count',component:RechargePackCountComponent
+},
+{
+  path:'recharge-in-period-count',component:RechargeInPeriodCountComponent
+},
+{
+  path:'update-recharge', component:UpdateRechargeComponent
+},
+{
+  path:'pack-main', component:PackMainComponent
+},
+{
+  path:'add-pack', component:AddPackComponent
+},
+{
+  path:'show-packbycost', component:ShowPackbycostComponent
+},
+{
+  path:'show-packbyid', component:ShowPackbyidComponent
+},
+{
+  path:'show-packbydaysValidity', component:ShowPackbydaysValidityComponent
+},
+{
+  path:'show-packGreaterAmt', component:ShowPackGrtAmtComponent
+},
+{
+  path:'update-pack', component:UpdatePackComponent
+},
+{
+  path:'delete-pack', component:DeletePackComponent
+},
+{
+  path:'show-popularPacks', component:ShowPopularPackComponent
+},
+{
+  path:'recharge-main', component:RechargeMainComponent
+},
+{
+  path:'admin-main',component:AdminMainComponent
+}, 
+{
+path:'login-page',component:LoginPageComponent
+}
 ];
 
 @NgModule({

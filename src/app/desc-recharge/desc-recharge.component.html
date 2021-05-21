@@ -1,0 +1,40 @@
+<br><br><br><br>
+<h2>Recharges List</h2>
+<form class="form-group" [formGroup]="rechargeForm" (ngSubmit)="fetch(rechargeForm.value)">
+    <label> Account ID</label> &nbsp;
+    <span *ngIf="rechargeForm.get('accountId')?.touched">
+        <small *ngIf="rechargeForm.get('accountId')?.errors?.required" class="text-danger">ID is required</small>
+        <small *ngIf="rechargeForm.get('accountId')?.errors?.min" class="text-danger">ID should be greater than 0</small>
+    </span>
+    <input type="number" required name="accountId" id="accountId" class="form-control" formControlName="accountId" [class.is-invalid]="rechargeForm.get('accountId')?.invalid" /><br>
+    <button class="btn btn-success" [disabled]='rechargeForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="createdFlag; else elseBlock" >
+<table class="table table-striped table-dark">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Vaidity</th>
+        <th scope="col">Plan Name</th>
+        <th scope="col">Plan Description</th>
+        <th scope="col">purchasedDate</th>
+        <th scope="col">Status</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let r of recharges">
+        <td>{{r.id}}</td>
+        <td>{{r.amount}}</td>
+        <td>{{r.daysValidity}}</td>
+        <td>{{r.planName}}</td>
+        <td>{{r.planDescription}}</td>
+        <td>{{r.purchasedDate}}</td>
+        <td>{{r.active}}</td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div>
+    <ng-template #elseBlock> Data Not Available </ng-template>
+</div>

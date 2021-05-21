@@ -1,0 +1,29 @@
+<br><br><br><br><h2>Update Recharge</h2>
+<form class="form-group" [formGroup]="rechargeUpdateForm" (ngSubmit)="update(rechargeUpdateForm.value)">
+    <label> Recharge ID</label> &nbsp;
+    <span *ngIf="rechargeUpdateForm.get('id')?.touched">
+        <small *ngIf="rechargeUpdateForm.get('id')?.errors?.required" class="text-danger">ID is required</small>
+        <small *ngIf="rechargeUpdateForm.get('id')?.errors?.min" class="text-danger">ID should be greater than 1</small>
+    </span>
+    <input type="number" required name="id" id="id" class="form-control" formControlName="id" [class.is-invalid]="rechargeUpdateForm.get('id')?.invalid" /><br>
+    <label>Amount</label>
+    <span *ngIf="rechargeUpdateForm.get('amount')?.touched">
+        <small *ngIf="rechargeUpdateForm.get('amount')?.errors?.required" class="text-danger">Amount is required</small>
+        <small *ngIf="rechargeUpdateForm.get('amount')?.errors?.min" class="text-danger">Amount should be greater than 99</small>
+    </span>
+    <input type="number" required name="amount" id="amount" class="form-control" formControlName="amount" [class.is-invalid]="rechargeUpdateForm.get('amount')?.invalid" /><br>
+    <label>Days Validity</label>
+    <span *ngIf="rechargeUpdateForm.get('daysValidity')?.touched">
+        <small *ngIf="rechargeUpdateForm.get('daysValidity')?.errors?.required" class="text-danger">Days Validity is required</small>
+    </span>
+    <input type="number" required name="daysValidity" id="daysValidity" class="form-control" formControlName="daysValidity" [class.is-invalid]="rechargeUpdateForm.get('daysValidity')?.invalid" /><br>
+    <label>Plan Status : </label>
+    Active <input type="radio"  id="true" name="active" value="true" class="form-check-input" formControlName="active" >
+    Disabled <input type="radio" id="false" name="active" value="false" class="form-check-input"  formControlName="active"><br>
+    <button class="btn btn-success" [disabled]='rechargeUpdateForm?.invalid'>Submit</button><br>
+</form>
+
+<div *ngIf="createdFlag; else elseBlock" >Recharge Updated Successfully!!!</div>
+<div>
+    <ng-template #elseBlock> Enter Correct ID to procced </ng-template>
+</div>

@@ -1,0 +1,59 @@
+<br><br><br><br>
+<h2>Register User</h2>
+<br>
+<form class="form-group" [formGroup]="userForm" (ngSubmit)="add(userForm.value)">
+ 
+  <label> Username</label> &nbsp;
+  <input type="text" required name="userName" id="userName" placeholder="Enter Username" class="form-control" formControlName="userName" />
+  <span *ngIf="userForm.get('userName')?.touched || userForm.get('userName')?.dirty" class="text-danger">
+    <small *ngIf="userForm.get('userName')?.errors?.required ">Username is required</small>
+    <small *ngIf="userForm.get('userName')?.errors?.minlength">user name should have minimum 5 characters</small>
+    <small *ngIf="userForm.get('userName')?.errors?.maxlength">user name should have maximum 20 characters</small>
+  </span>
+  <br>
+  <label> First Name</label> &nbsp;
+  <input type="text" required name="firstName" id="firstName" placeholder="Enter firstname"class="form-control" formControlName="firstName"
+    [class.is-invalid]="userForm.get('serviceId')?.invalid" />
+    <span *ngIf="userForm.get('firstName')?.touched || userForm.get('firstName')?.dirty" class="text-danger">
+      <small *ngIf="userForm.get('firstName')?.errors?.required ">Firstname is required</small>
+      <small *ngIf="userForm.get('firstName')?.errors?.minlength">Firstname should have minimum 2  characters</small>
+      <small *ngIf="userForm.get('firstName')?.errors?.maxlength">Firstname should have maximum 15 characters</small>
+    </span>
+<br>
+  <label> Last Name</label> &nbsp;
+  <input type="text" required name="lastName" id="lastName" placeholder="Enter lastname" class="form-control" formControlName="lastName"
+    [class.is-invalid]="userForm.get('Lastname')?.invalid" />
+    <span *ngIf="userForm.get('lastName')?.touched || userForm.get('lastName')?.dirty" class="text-danger">
+      <small *ngIf="userForm.get('lastName')?.errors?.required ">Lastname is required</small>
+      <small *ngIf="userForm.get('lastName')?.errors?.minlength">Lastname should have minimum 2  characters</small>
+      <small *ngIf="userForm.get('lastName')?.errors?.maxlength">Lastname should have maximum 10 characters</small>
+    </span>
+<br>
+  <label> Password</label> &nbsp;
+  <input type="password" required name="password" id="password" placeholder="Password must have uppercase/lowercase/digit and special character" class="form-control" formControlName="password" />
+  <span *ngIf="userForm.get('password')?.touched || userForm.get('password')?.dirty" class="text-danger">
+    <small *ngIf="userForm.get('password')?.errors?.required ">Password is required</small>
+    <small *ngIf="userForm.get('password')?.errors?.minlength">Password should have minimum 8 characters</small>
+    <small *ngIf="userForm.get('password')?.errors?.maxlength">Password should have maximum 20 characters</small>
+    <small *ngIf="userForm.get('password')?.errors?.pattern"><br>Password is invalid ,try adding @ /A-Z/a-z/or 0-9</small>
+  </span>
+  <br>
+  <label> Role</label> &nbsp;
+  <input type="text" required name="role" id="role" placeholder="Enter role" class="form-control" formControlName="role" />
+    <!-- [class.is-invalid]="serviceForm.get('role')?.invalid"  -->
+   
+    <span *ngIf="userForm.get('role')?.touched || userForm.get('role')?.dirty" class="text-danger">
+    <small *ngIf="userForm.get('role')?.errors?.required ">role is required</small>
+      <small *ngIf="userForm.get('role')?.errors?.minlength">role should have minimum 2  characters</small>
+      <small *ngIf="userForm.get('role')?.errors?.maxlength">role should have maximum 10 characters</small>
+    </span>
+    <br>
+
+  <button class="btn btn-success" [disabled]='userForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="createdFlag">
+  Created user with ID: {{user.id}},<br>
+  Username:{{user.username}},<br>
+  Name: {{user.firstName}} {{user.lastName}},<br>
+ account id:{{user.id-1}}
+</div>

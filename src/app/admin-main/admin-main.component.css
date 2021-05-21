@@ -1,0 +1,20 @@
+.btn-primary{
+    border: none;
+    border-radius: 16px;
+    padding: 10px 20px;
+}
+div{
+    padding-top: 150px;
+    font-size: 2rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    }
+    .buttons{
+        position: absolute;
+        left:320px;
+        top: 120px;
+    }
+    a{
+        color:white;
+        text-decoration:none;
+    }

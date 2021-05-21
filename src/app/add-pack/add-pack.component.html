@@ -1,0 +1,46 @@
+<!-- <p>add-pack works!</p> -->
+<br><br>
+<h1 class="lst">Create New Pack</h1>
+<br>
+<form class="form-group" [formGroup]="packForm" (ngSubmit)="add(packForm.value)">
+<label><h5 class="idc">Cost</h5></label>&nbsp;
+<span *ngIf="packForm.get('cost')?.touched" >
+    <small *ngIf="packForm.get('cost')?.errors?.required" class="text-danger"> Cost is required</small>
+    <small *ngIf="packForm.get('cost')?.errors?.min" class="text-danger">Cost should be of 1 or more digits</small>
+</span> 
+<input type="number" required name="cost" id="cost" class="form-control" formControlName="cost" [class.is-invalid]="packForm.get('cost')?.invalid" /><br>
+<label><h5 class="idc">DaysValidity</h5></label>&nbsp;
+<span *ngIf="packForm.get('daysValidity')?.touched">
+    <small *ngIf="packForm.get('daysValidity')?.errors?.required" class="text-danger">DaysValidity is required</small>
+    <small *ngIf="packForm.get('daysValidity')?.errors?.min" class="text-danger">DaysValidity should be of 1 or more digits</small>
+</span> 
+<input type="number" required name="daysValidity" id="daysValidity" class="form-control" formControlName="daysValidity" [class.is-invalid]="packForm.get('daysValidity')?.invalid" /><br>
+<label><h5 class="idc">Channels</h5></label>&nbsp;
+<span *ngIf="packForm.get('channels')?.touched">
+    <small *ngIf="packForm.get('channels')?.errors?.required" class="text-danger">Channels are required</small>
+</span> 
+<input type="text" required name="channels" id="channels" class="form-control" formControlName="channels" [class.is-invalid]="packForm.get('channels')?.invalid" />
+<br>
+<button class="btn btn-success" (click)="addChannel(packForm.value.channels)">Add Channel</button><br>
+<br><label><h5 class="idc">Description</h5></label>&nbsp;
+<span *ngIf="packForm.get('description')?.touched">
+    <small *ngIf="packForm.get('description')?.errors?.required" class="text-danger">Description is required</small>
+</span> 
+<input type="text" name="description" id="description" class="form-control" formControlName="description" [class.is-invalid]="packForm.get('description')?.invalid" /><br>
+<label><h5 class="idc">PlanName</h5></label>&nbsp;
+<span *ngIf="packForm.get('planName')?.touched">
+    <small *ngIf="packForm.get('planName')?.errors?.required" class="text-danger">PlanName is required</small>
+</span> 
+<input type="text" required name="planName" id="planName" class="form-control" formControlName="planName" [class.is-invalid]="packForm.get('planName')?.invalid" /><br>
+
+<button class="btn btn-success" [disabled]='packForm?.invalid'>Submit</button><br>
+</form>
+<br>
+<!-- {{packForm.value|json}} -->
+<div *ngIf="createdFlag" >
+    Created pack with ID: {{pack.id}}, Name: {{pack.planName}}  <br>
+</div>
+<br><br>
+
+
+

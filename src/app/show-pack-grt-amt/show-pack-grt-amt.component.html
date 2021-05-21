@@ -1,0 +1,43 @@
+<!-- <p>show-pack-grt-amt works!</p> -->
+<br><br><br><br>
+<form class="form-group" [formGroup]="packForm" (ngSubmit)="packInfoGrtAmt(packForm.value)">
+<label><h3 class="ent">Enter Cost</h3></label><br><br>
+<span *ngIf="packForm.get('cost')?.touched">
+  <small *ngIf="packForm.get('cost')?.errors?.required" class="text-danger">Cost is required</small>
+  <small *ngIf="packForm.get('cost')?.errors?.min" class="text-danger">Cost should be of 2 or more digits</small>
+</span>
+<input type="number" required name="cost" id="cost" class="form-control" formControlName="cost" #tinput/><br>
+<!-- <input type="text" #tPack>  -->
+<br>
+
+<button class="btn btn-primary" [disabled]='packForm?.invalid'>FETCH INFO</button>
+</form>
+<br>
+<div *ngIf="createdFlag">
+<div *ngIf="pack.length>0; else elseBlock">
+<h1 class="lst">List of Packs Greater Than {{tinput.value}}</h1><br><br>
+<table border="1">
+  <tr>
+    <th><h3 class="dyv">ID</h3></th>
+    <th><h3 class="dyv">Cost</h3></th>
+    <th><h3 class="dyv">DaysValidity</h3></th>
+    <th><h3 class="dyv">Description</h3></th>
+    <th><h3 class="dyv">PlanName</h3></th>
+    <th><h3 class="dyv">Channels</h3></th>
+  </tr>
+  <tr *ngFor="let p of pack">
+    <td><h5 class="idc">{{p.id}}</h5></td>
+    <td><h5 class="cst">{{p.cost}}</h5></td>
+    <td><h5 class="idc">{{p.daysValidity}}</h5></td>
+    <td><h5 class="cst">{{p.description}}</h5></td>
+    <td><h5 class="idc">{{p.planName}}</h5></td>
+    <td><h5 class="cst">{{p.channels}}</h5></td>
+  </tr>
+</table>
+</div>
+<div> 
+    <ng-template #elseBlock> No Data available</ng-template>
+  </div>
+<!-- </div> -->
+<br>
+<br>

@@ -1,0 +1,43 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- <form class="form-group">
+<h3>Enter Service ID To Close</h3>
+<input type="text" #tServiceRequest> 
+<br><br>
+<button class="btn btn-primary" (click)="serviceInfo(tServiceRequest.value)">FETCH INFO</button>
+</form>
+<br><br>
+<div *ngIf="serviceRequest.id!=0; else elseBlock">
+ <ul>
+     <li>ID: {{serviceRequest.id}}</li>
+     <li>Date: {{serviceRequest.requestedDate}}</li>
+     <li>StatusOpened: {{serviceRequest.statusOpened}}</li>
+ </ul>
+</div>
+<div>
+  <ng-template #elseBlock> No Data available</ng-template>
+</div>  -->
+<h2>Close Service</h2>
+<form class="form-group" [formGroup]="serviceForm" (ngSubmit)="serviceInfo(serviceForm.value)">
+<label> SERVICE ID</label> &nbsp;
+<span *ngIf="serviceForm.get('serviceId')?.touched">
+    <small *ngIf="serviceForm.get('serviceId')?.errors?.required" class="text-danger">ID is required</small>
+    <small *ngIf="serviceForm.get('serviceId')?.errors?.min" class="text-danger">ID should be greater than 1</small>
+</span>
+<input type="number" required name="serviceId" id="accountId" class="form-control" formControlName="serviceId" [class.is-invalid]="serviceForm.get('serviceId')?.invalid" /><br>
+<button class="btn btn-success" [disabled]='serviceForm?.invalid'>Submit</button><br>
+</form>
+<div *ngIf="serviceRequest.id!=0; else elseBlock">
+  <ul>
+      <li>ID: {{serviceRequest.id}}</li>
+      <li>Date: {{serviceRequest.requestedDate}}</li>
+      <li>StatusOpened: {{serviceRequest.statusOpened}}</li>
+  </ul>
+ </div>
+ <div>
+   <ng-template #elseBlock> No Data available</ng-template>
+ </div> 
+

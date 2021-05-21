@@ -1,0 +1,21 @@
+table, th, td {
+    border: 1px solid black;
+    border-color: rgb(94, 7, 7);
+  }
+  th, td {
+    padding: 5px;
+  }
+  .idc{
+    color:rgb(44, 44, 141)
+  }
+  .cst{
+    color:rgb(175, 77, 77)
+  }
+  .dyv{
+    color:black
+  }
+  .lst{
+    color:rgb(230, 87, 87)
+  }
+  
+  

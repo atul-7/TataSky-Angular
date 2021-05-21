@@ -1,7 +1,30 @@
-header, footer{
-    background-color: lightblue;
-    min-height: 100px;
+
+header{
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    right: 0; */
+    /* height: 80px; */
+    display: flex;
+    align-items: center;
+    background-color:black;
+    color: white;
+    font-weight: 600;
 }
-main {
-    min-height: 300px;
+
+main{
+    background-color: white;
+    min-height: 545px;
+}
+
+footer{
+     /* position:relative;
+    bottom: 0;
+    left: 0;
+    right: 0; */
+    height: 80px; 
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
 }
