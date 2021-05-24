@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-main',
@@ -7,10 +6,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-main.component.css']
 })
 export class AdminMainComponent implements OnInit {
-router:Router;
-  constructor(router:Router) { 
-    this.router=router;
-  }
+
+  constructor() { }
 
   ngOnInit(): void {
   }

@@ -1,8 +1,9 @@
-<!-- <p>show-packbyid works!</p> -->
-<br>
-<br>
-<br>
-<br>
+<header>
+  <header class="col-lg-12">
+    <app-header></app-header>
+   </header>
+   <br><br><br><br><br>
+   <div class="container">
 <form class="form-group" [formGroup]="packForm" (ngSubmit)="packInfo(packForm.value)">
 <label><h3 class="cst">Enter Pack ID</h3></label><br><br>
 <span *ngIf="packForm.get('id')?.touched">
@@ -10,7 +11,7 @@
   <small *ngIf="packForm.get('id')?.errors?.min" class="text-danger">ID should be of 1 or more digits</small>
 </span> 
 <input type="text" required name="id" id="id" class="form-control" formControlName="id" /><br>
-<!-- <input type="text" #tPack>  -->
+
 <br>
 
 <button class="btn btn-primary" (click)="packInfo(packForm.value)">FETCH INFO</button>
@@ -34,3 +35,7 @@
 </div>
 </div>
 <br><br>
+</div>
+<footer class="col-lg-12">
+    <app-footer></app-footer>
+    </footer>

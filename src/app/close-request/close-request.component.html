@@ -1,25 +1,10 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<!-- <form class="form-group">
-<h3>Enter Service ID To Close</h3>
-<input type="text" #tServiceRequest> 
-<br><br>
-<button class="btn btn-primary" (click)="serviceInfo(tServiceRequest.value)">FETCH INFO</button>
-</form>
-<br><br>
-<div *ngIf="serviceRequest.id!=0; else elseBlock">
- <ul>
-     <li>ID: {{serviceRequest.id}}</li>
-     <li>Date: {{serviceRequest.requestedDate}}</li>
-     <li>StatusOpened: {{serviceRequest.statusOpened}}</li>
- </ul>
-</div>
-<div>
-  <ng-template #elseBlock> No Data available</ng-template>
-</div>  -->
+<header class="col-lg-12">
+  <app-admin-header></app-admin-header>
+ </header>
+ <br><br><br><br><br>
+
+<div class="container">
+
 <h2>Close Service</h2>
 <form class="form-group" [formGroup]="serviceForm" (ngSubmit)="serviceInfo(serviceForm.value)">
 <label> SERVICE ID</label> &nbsp;
@@ -40,4 +25,8 @@
  <div>
    <ng-template #elseBlock> No Data available</ng-template>
  </div> 
+ </div>
+ <footer class="col-lg-12">
+  <app-footer></app-footer>
+  </footer>
 

@@ -1,4 +1,10 @@
-<br><br><br><br><h2>Recharges List in Date Range</h2>
+<header>
+    <header class="col-lg-12">
+      <app-header></app-header>
+     </header>
+     <br><br><br><br><br>
+     <div class="container">
+<h2>Recharges List in Date Range</h2>
 <form class="form-group" [formGroup]="rechargeForm" (ngSubmit)="fetch(rechargeForm.value)">
     <label> Start Date</label> &nbsp;
     <input type="date" required  name="startDate" id="startDate" class="form-control" formControlName="startDate" [class.is-invalid]="rechargeForm.get('startDate')?.invalid" /><br>
@@ -37,3 +43,7 @@
     <ng-template #elseBlock> Data Not Available </ng-template>
 </div>
 </div>
+</div>
+<footer class="col-lg-12">
+    <app-footer></app-footer>
+    </footer>

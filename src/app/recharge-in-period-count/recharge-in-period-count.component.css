@@ -1,0 +1,12 @@
+footer{
+    height: 80px; 
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    position: relative;
+   
+  }
+  .container{
+      padding-bottom: 200px;
+  }

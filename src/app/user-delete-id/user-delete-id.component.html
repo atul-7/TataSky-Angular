@@ -1,18 +1,10 @@
-<br><br><br><br><br>
-<!-- 
-  <h3>Enter UserID To Delete</h3>
-  <input type="number" #tServiceRequest> 
-  <br><br>
-  <button class="btn btn-primary" (click)="serviceInfo(tServiceRequest.value)">FETCH INFO</button>
-  <br><br>
-  <div *ngIf="user.id!=0; else elseBlock">
-   <ul>
-       Data Deleted
-   </ul>
-  </div>
-  <div>
-    <ng-template #elseBlock> No Data available</ng-template>
-  </div>  -->
+<header>
+  <header class="col-lg-12">
+    <app-header></app-header>
+   </header>
+   <br><br><br><br><br>
+<div class="container">
+
   <h2>Delete User</h2>
 <form class="form-group" [formGroup]="userForm" (ngSubmit)="userInfo(userForm.value)">
 <label> User ID</label> &nbsp;
@@ -29,4 +21,8 @@
  <div>
    <ng-template #elseBlock> No Data available</ng-template>
  </div>
+</div>
+<footer class="col-lg-12">
+  <app-footer></app-footer>
+  </footer>
  

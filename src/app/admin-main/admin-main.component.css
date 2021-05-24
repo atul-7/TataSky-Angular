@@ -1,20 +1,28 @@
-.btn-primary{
-    border: none;
-    border-radius: 16px;
-    padding: 10px 20px;
+footer{
+    height: 80px; 
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
-div{
-    padding-top: 150px;
-    font-size: 2rem;
+.colr{
+    color: #8E44AD;
+
+}
+.welcome{
+    padding-top: 100px;
+    text-align: center;
+}
+*{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
-    }
-    .buttons{
-        position: absolute;
-        left:320px;
-        top: 120px;
-    }
-    a{
-        color:white;
-        text-decoration:none;
-    }
+    background-color:#EBDEF0;
+
+}
+img {
+    border-radius: 50%;
+  }

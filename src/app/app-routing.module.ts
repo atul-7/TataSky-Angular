@@ -5,17 +5,22 @@ import { AddPackComponent } from './add-pack/add-pack.component';
 import { AddRechargeComponent } from './add-recharge/add-recharge.component';
 import { AddServiceComponent } from './add-service/add-service.component';
 import { AdminMainComponent } from './admin-main/admin-main.component';
+import { AdminPackComponent } from './admin-pack/admin-pack.component';
 import { CloseRequestComponent } from './close-request/close-request.component';
 import { CountAccountInPeriodComponent } from './count-account-in-period/count-account-in-period.component';
 import { CountAccountsComponent } from './count-accounts/count-accounts.component';
 import { CountRechargeComponent } from './count-recharge/count-recharge.component';
+import { CustomerLoginComponent } from './customer-login/customer-login.component';
+import { CustomerMainComponent } from './customer-main/customer-main.component';
 import { DeleteAccountComponent } from './delete-account/delete-account.component';
 import { DeletePackComponent } from './delete-pack/delete-pack.component';
 import { DescRechargeComponent } from './desc-recharge/desc-recharge.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FindAccountComponent } from './find-account/find-account.component';
-import { HomeMainComponent } from './home-main/home-main.component';
+import { MainLoginComponent } from './home main/main-login.component';
+import { LoginButtonsComponent } from './login-buttons/login-buttons.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { MainComponent } from './main/main.component';
 import { OpenedServiceComponent } from './opened-service/opened-service.component';
 import { PackMainComponent } from './pack-main/pack-main.component';
 import { RechargeInPeriodCountComponent } from './recharge-in-period-count/recharge-in-period-count.component';
@@ -40,22 +45,16 @@ import { UserUpdateComponent } from './user-update/user-update.component';
 
 const routes: Routes = [
   {
-    path:'service-main', component:ServiceMainComponent
+    path:'login', component:LoginButtonsComponent
   },
   {
-    path:'home-main', component:HomeMainComponent
+    path:'customer-main', component:CustomerMainComponent
   },
   {
-    path:'add-service', component:AddServiceComponent
+    path:'user-main', component:UserMainComponent
   },
   {
-    path:'close-service', component:CloseRequestComponent
-  },
-  {
-    path:'opened-service', component:OpenedServiceComponent
-  },
-  {
-    path:'find-user', component:UserFindIdComponent
+    path:'find-user', component:UserFindIdComponent 
   },
   {
     path:'find-user-username', component:UserFindUsernameComponent 
@@ -63,31 +62,65 @@ const routes: Routes = [
   {
     path:'delete-userId', component:UserDeleteIdComponent
   },
-  {
-    path:'account-main', component:AccountmainComponent
-  },
-  {
-    path:'find-acc', component:FindAccountComponent
-  },
-  {
-    path:'user-main', component:UserMainComponent
-  },
-  {
+{
     path:'register-user', component:RegisterUserComponent
   },
-  {
-    path:'countInPeriod', component:CountAccountInPeriodComponent
-  },
-  {
-    path:'accountCount', component:CountAccountsComponent
-  },
-  {
-    path:'delete-account', component:DeleteAccountComponent
-  },
-  {
+ {
       path:'user-update', component:UserUpdateComponent
   },
   {
+    path:'', component:MainLoginComponent
+},
+{
+  path:'account-main', component:AccountmainComponent
+},
+{
+  path:'find-acc', component:FindAccountComponent
+},
+{
+  path:'countInPeriod', component:CountAccountInPeriodComponent
+},
+{
+  path:'accountCount', component:CountAccountsComponent
+},
+{
+  path:'delete-account', component:DeleteAccountComponent
+},
+{
+  path:'pack-main', component:PackMainComponent
+},
+{
+  path:'add-pack', component:AddPackComponent
+},
+
+{
+  path:'show-packbycost', component:ShowPackbycostComponent
+},
+{
+  path:'show-packbyid', component:ShowPackbyidComponent
+},
+{
+  path:'show-packbydaysValidity', component:ShowPackbydaysValidityComponent
+},
+{
+  path:'show-packGreaterAmt', component:ShowPackGrtAmtComponent
+},
+{
+  path:'update-pack', component:UpdatePackComponent
+},
+{
+  path:'delete-pack', component:DeletePackComponent
+},
+{
+  path:'show-popularPacks', component:ShowPopularPackComponent
+},
+{
+  path:'customer-login', component:CustomerLoginComponent
+},
+{
+  path:'recharge-main', component:RechargeMainComponent
+},
+ {
     path:'new-recharge', component:AddRechargeComponent
 },
 {
@@ -112,51 +145,40 @@ const routes: Routes = [
   path:'update-recharge', component:UpdateRechargeComponent
 },
 {
-  path:'pack-main', component:PackMainComponent
+  path:'admin-main', component:AdminMainComponent
 },
 {
-  path:'add-pack', component:AddPackComponent
+  path:'service-main', component:ServiceMainComponent
+},
+
+{
+  path:'add-service', component:AddServiceComponent
 },
 {
-  path:'show-packbycost', component:ShowPackbycostComponent
+  path:'close-service', component:CloseRequestComponent
 },
 {
-  path:'show-packbyid', component:ShowPackbyidComponent
+  path:'opened-service', component:OpenedServiceComponent
 },
 {
-  path:'show-packbydaysValidity', component:ShowPackbydaysValidityComponent
+  path:'pack-admin', component:AdminPackComponent
 },
 {
-  path:'show-packGreaterAmt', component:ShowPackGrtAmtComponent
+  path:'customer-home-main', component:MainComponent
 },
 {
-  path:'update-pack', component:UpdatePackComponent
+path:'login-page', component:LoginPageComponent
 },
 {
-  path:'delete-pack', component:DeletePackComponent
-},
-{
-  path:'show-popularPacks', component:ShowPopularPackComponent
-},
-{
-  path:'recharge-main', component:RechargeMainComponent
-},
-{
-  path:'admin-main',component:AdminMainComponent
-}, 
-{
-path:'login-page',component:LoginPageComponent
-},
-{
-  path:'', component:HomeMainComponent
+  path:'', component:MainLoginComponent
 },
 {
   path:'error', component:ErrorPageComponent
-}
-,
+},
 {
   path:'**', redirectTo:'/error'
 }
+
 ];
 
 @NgModule({

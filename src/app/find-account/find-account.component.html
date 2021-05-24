@@ -1,7 +1,9 @@
-
-<br>
-<br>
-<br>
+<header>
+    <header class="col-lg-12">
+      <app-header></app-header>
+     </header>
+     <br><br><br><br><br>
+     <div class="container">
 <h2>Find Account</h2>
 <form class="form-group" [formGroup]="serviceForm" (ngSubmit)="accInfo(serviceForm.value)">
 <label> Account ID</label> &nbsp;
@@ -24,18 +26,7 @@
                     <li>Username: {{account.userTo.username}} Name: {{account.userTo.firstName}} {{account.userTo.lastName}}  Role: {{account.userTo.role}}</li>
                 </ul>
         </ul>
-        <ul>
-                Recharges:
-            <li *ngFor="let recharge of account.recharges">
-                <ul>
-                    <li>ID: {{recharge.id}}</li>
-                    <li>daysValidity: {{recharge.daysValidity}}</li>
-                    <li>planDescription: {{recharge.planDescription}}</li>
-                    <li>planName: {{recharge.planName}}</li>
-                    <li>purchasedDate: {{recharge.purchasedDate}}</li>
-                </ul>
-            </li>
-        </ul>
+       
         <ul>
                 Service Requests:
             <li *ngFor="let requests of account.requests">
@@ -54,12 +45,16 @@
                     <li>daysValidity: {{account.currentPack.daysValidity}}</li>
                     <li>description: {{account.currentPack.description}}</li>
                     <li>planName: {{account.currentPack.planName}}</li>
-                    <li>channels: {{account.currentPack.channels}}</li>
+                    channels: {{account.currentPack.channels}}
                 </ul>
           
-        </ul>
+            </ul>
     </ul>
 </div>
 <div>
     <ng-template #elseBlock> No Data available</ng-template>
 </div>
+</div>
+<footer class="col-lg-12">
+    <app-footer></app-footer>
+    </footer>

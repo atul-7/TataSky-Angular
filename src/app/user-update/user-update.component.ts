@@ -28,13 +28,17 @@ export class UserUpdateComponent implements OnInit {
 
   serviceForm = this.formBuilder.group({
     id:['', [Validators.required, Validators.min(1)]],
-    username:[''],
-    firstName:[''],
-    lastName:[''],
-    password:[''],
-    role:[''],
+    username:['',[Validators.required, Validators.minLength(5), Validators.maxLength(20)]], 
+    firstName:['',[Validators.required,Validators.minLength(2), Validators.maxLength(15),
+      Validators.pattern('[a-zA-Z]*')]],
+    lastName:['',[Validators.required,Validators.minLength(2), Validators.maxLength(10),
+      Validators.pattern('[a-zA-Z]*')]],
+    password:['' ,[Validators.required,Validators.minLength(8), Validators.maxLength(20),
+      Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,20}$')]],
+   
+    role:['',[Validators.required,Validators.minLength(2), Validators.maxLength(15)]], 
     account:this.formBuilder.group({
-      accountId:[''],
+      accountId:['', [Validators.required, Validators.min(1)]],
   })
 })
 

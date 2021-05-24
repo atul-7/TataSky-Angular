@@ -1,13 +1,19 @@
-
-<div class="text">
-  <p>What would you like to do? </p>
+<header class="col-lg-12">
+  <app-admin-header></app-admin-header>
+ </header>
+  <div class="text">
+    <h1><b class="color">What would you like to do?</b> </h1>
+    </div>
+    <div class="buttons">
+        <br>
+        <a routerLink="/add-service"> <button type="button" class="custom"><b>Add Service Request</b></button></a>
+  &nbsp;&nbsp;&nbsp;
+  <a routerLink="/close-service"> <button type="button" class="custom"><b>Close Service Request</b></button></a>
+  &nbsp;&nbsp;&nbsp;
+  <a routerLink="/opened-service"> <button type="button" class="custom"><b>Opened Service Request</b></button></a>
+  &nbsp;&nbsp;&nbsp;
+  
   </div>
-  <div class="buttons">
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <button type="button" class="btn btn-primary"><a routerLink="/add-service"><b>Add Service Request</b></a></button>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button type="button" class="btn btn-primary"><a routerLink="/close-service"><b>Close Service Request</b></a></button>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button type="button" class="btn btn-primary"><a routerLink="/opened-service"><b>Opened Service Request</b></a></button>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</div>
+  <footer class="col-lg-12">
+    <app-footer></app-footer>
+    </footer>

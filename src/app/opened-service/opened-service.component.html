@@ -1,6 +1,9 @@
-<br>
-<br>
-<br>
+<header class="col-lg-12">
+    <app-admin-header></app-admin-header>
+   </header>
+   <br><br><br><br><br>
+   <div class="container">
+
 <h2>Find Opened Service</h2>
 <form class="form-group" [formGroup]="serviceForm" (ngSubmit)="open(serviceForm.value)">
 <label> Account ID</label> &nbsp;
@@ -23,3 +26,7 @@
 <div>
     <ng-template #elseBlock> No Opened Request</ng-template>
 </div>
+</div>
+<footer class="col-lg-12">
+    <app-footer></app-footer>
+    </footer>

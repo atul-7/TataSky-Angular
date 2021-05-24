@@ -1,27 +1,64 @@
-<br><br>
+<header>
+  <header class="col-lg-12">
+    <app-header></app-header>
+   </header>
+   <br><br><br><br><br><br> 
+   <div class="container">
 <h2>Update User</h2>
     <br>
 <form class="form-group" [formGroup]="serviceForm" (ngSubmit)="update(serviceForm.value)">
     <label> USER ID</label> &nbsp;
-      <span *ngIf="serviceForm.get('userId')?.touched">
-          <small *ngIf="serviceForm.get('userId')?.errors?.required" class="text-danger">ID is required</small>
-          <small *ngIf="serviceForm.get('userId')?.errors?.min" class="text-danger">ID should be greater than 1</small>
+      <span *ngIf="serviceForm.get('id')?.touched">
+          <small *ngIf="serviceForm.get('id')?.errors?.required" class="text-danger">ID is required</small>
+          <small *ngIf="serviceForm.get('id')?.errors?.min" class="text-danger">ID should be greater than 1</small>
       </span>
-      <input type="number" required name="id" id="id" class="form-control" formControlName="id" [class.is-invalid]="serviceForm.get('id')?.invalid" /><br>
+      <input type="number" required name="id" id="id" class="form-control" formControlName="id" /><br>
     <label> USER NAME</label> &nbsp;
-      <input type="text" required name="username" id="username" class="form-control" formControlName="username" [class.is-invalid]="serviceForm.get('username')?.invalid" /><br>
+      <input type="text" required name="username" id="username" class="form-control" formControlName="username"/>
+      <span *ngIf="serviceForm.get('username')?.touched || serviceForm.get('username')?.dirty" class="text-danger">
+        <small *ngIf="serviceForm.get('username')?.errors?.required ">Username is required</small>
+        <small *ngIf="serviceForm.get('username')?.errors?.minlength">user name should have minimum 5 characters</small>
+        <small *ngIf="serviceForm.get('userName')?.errors?.maxlength">user name should have maximum 20 characters</small>
+      </span>
+      <br>
       <label> First Name</label> &nbsp;
-      <input type="text" required name="firstName" id="firstName" class="form-control" formControlName="firstName" [class.is-invalid]="serviceForm.get('firstName')?.invalid" /><br>
+      <input type="text" required name="firstName" id="firstName" class="form-control" formControlName="firstName"/>
+      <span *ngIf="serviceForm.get('firstName')?.touched || serviceForm.get('firstName')?.dirty" class="text-danger">
+        <small *ngIf="serviceForm.get('firstName')?.errors?.required ">Firstname is required</small>
+        <small *ngIf="serviceForm.get('firstName')?.errors?.minlength">Firstname should have minimum 2  characters</small>
+        <small *ngIf="serviceForm.get('firstName')?.errors?.maxlength">Firstname should have maximum 15 characters</small>
+      </span> 
+  <br>
       <label> Last Name</label> &nbsp;
-      <input type="text" required name="lastName" id="lastName" class="form-control" formControlName="lastName" [class.is-invalid]="serviceForm.get('lastName')?.invalid" /><br>
+      <input type="text" required name="lastName" id="lastName" class="form-control" formControlName="lastName" />
+      <span *ngIf="serviceForm.get('lastName')?.touched || serviceForm.get('lastName')?.dirty" class="text-danger">
+        <small *ngIf="serviceForm.get('lastName')?.errors?.required ">Lastname is required</small>
+        <small *ngIf="serviceForm.get('lastName')?.errors?.minlength">Lastname should have minimum 2  characters</small>
+        <small *ngIf="serviceForm.get('lastName')?.errors?.maxlength">Lastname should have maximum 10 characters</small>
+      </span> 
+  <br>
       <label> Password</label> &nbsp;
-      <input type="text" required name="password" id="password" class="form-control" formControlName="password" [class.is-invalid]="serviceForm.get('password')?.invalid" /><br>
+      <input type="password" required name="password" id="password" class="form-control" formControlName="password" />
+      <span *ngIf="serviceForm.get('password')?.touched || serviceForm.get('password')?.dirty" class="text-danger">
+        <small *ngIf="serviceForm.get('password')?.errors?.required ">Password is required</small>
+        <small *ngIf="serviceForm.get('password')?.errors?.minlength">Password should have minimum 8 characters</small>
+        <small *ngIf="serviceForm.get('password')?.errors?.maxlength">Password should have maximum 20 characters</small>
+        <small *ngIf="serviceForm.get('password')?.errors?.pattern"><br>Password is invalid ,try adding @ /A-Z/a-z/or 0-9</small>
+      </span>
+      <br>
       <label> Role</label> &nbsp;
-      <input type="text" required name="role" id="role" class="form-control" formControlName="role" [class.is-invalid]="serviceForm.get('role')?.invalid" /><br>
-      <div formGroupName="account">
+      <input type="text" required name="role" id="role" class="form-control" formControlName="role"/>
+      <span *ngIf="serviceForm.get('role')?.touched || serviceForm.get('role')?.dirty" class="text-danger">
+        <small *ngIf="serviceForm.get('role')?.errors?.required ">role is required</small>
+          <small *ngIf="serviceForm.get('role')?.errors?.minlength">role should have minimum 2  characters</small>
+          <small *ngIf="serviceForm.get('role')?.errors?.maxlength">role should have maximum 10 characters</small>
+        </span>
+        <br>
+      <div formGroupName="accountForm"> 
         <div>
         <label> ACCOUNT ID</label> &nbsp;
-        <input type="number" required name="accountId" id="accountId" class="form-control" formControlName="accountId"  /><br>
+        <input type="number" required name="accountId" id="accountId" class="form-control" formControlName="accountId"  />
+        
       </div>
     </div>
         <button class="btn btn-success" [disabled]='serviceForm?.invalid'>Submit</button><br>
@@ -29,4 +66,9 @@
 <!-- {{serviceForm.value|json}} -->
 <div *ngIf="createdFlag" >
     Updated user with ID: {{user.id}}
-    
+    </div>
+   </div>
+   <br>
+   <footer class="col-lg-12">
+    <app-footer></app-footer>
+    </footer>

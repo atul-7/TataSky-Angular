@@ -4,3 +4,12 @@
 .idc{
     color:rgb(184, 34, 121);
 }
+footer{
+  height: 80px; 
+  align-items: center;
+  background-color: black;
+  color: white;
+  font-weight: 600;
+  position: relative;
+ 
+}

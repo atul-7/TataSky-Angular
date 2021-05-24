@@ -1,5 +1,9 @@
-<!-- <p>delete-pack works!</p> -->
-<br><br>
+<header>
+  <header class="col-lg-12">
+    <app-header></app-header>
+   </header>
+<br><br><br><br>
+<div class="container">
 <form class="form-group" [formGroup]="packForm" (ngSubmit)="packDelInfo(packForm.value)">
 <label><h3 class="lst">Enter Pack ID</h3></label><br><br>
 <span *ngIf="packForm.get('id')?.touched">
@@ -12,13 +16,13 @@
 <button class="btn btn-primary" (click)="packDelInfo(packForm.value)">DELETE INFO</button>
 </form>
 <br><br><br>
-<div *ngIf="createdFlag"  >
-  <div *ngIf="pack.id!=0; else elseBlock">
-    <h4 class="del">Pack With ID:{{tinput.value}}, Deleted Successfully</h4>
-  </div>
-  <div>
-    <ng-template #elseBlock>No Data Available</ng-template>
-  </div>
+<div *ngIf="createdFlag; else elseBlock">
+  Deleted Pack Successfully!!!  
 </div>
-<br>
-<br>
+ <div>
+   <ng-template #elseBlock> No Data available</ng-template>
+ </div>
+</div>
+<footer class="col-lg-12">
+  <app-footer></app-footer>
+  </footer>

@@ -15,6 +15,7 @@ export class LoginPageComponent implements OnInit {
 user=new UserDto();
 flag:boolean=false;
 router:Router;
+createdFlag:boolean=false;
 
   constructor(router:Router,private service:UserService,private http:HttpClient,private formBuilder:FormBuilder) {
     this.router=router;
@@ -26,12 +27,7 @@ router:Router;
   ngOnInit(): void {
   }
   login(data:any){
-    // this.service.login(this.user);}
-  //   .subscribe(
-  //   data => console.log("response received"),
-  //   error =>console.log("exception occured") 
-  // )
-  //     }
+   this.createdFlag=true;
 
   this.http.get("http://localhost:8089/user/by/id/"+data.id).subscribe(
        response=>{

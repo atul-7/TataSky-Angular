@@ -4,3 +4,14 @@
 .cst{
     color:rgb(184, 34, 121);
   }
+  footer{
+    height: 80px; 
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }

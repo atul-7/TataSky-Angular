@@ -1,5 +1,9 @@
-<br><br><br><br><br>
-
+<header>
+  <header class="col-lg-12">
+    <app-header></app-header>
+   </header>
+   <br><br><br><br><br>
+<div class="container">
   <h3>FIND USER BY ID</h3>
   <form class="form-group" [formGroup]="userForm" (ngSubmit)="userInfo(userForm.value)">
     <label> USER ID</label> &nbsp;
@@ -23,3 +27,7 @@
   <div>
     <ng-template #elseBlock> No Data available</ng-template>
   </div>
+</div>
+  <footer class="col-lg-12">
+    <app-footer></app-footer>
+    </footer>

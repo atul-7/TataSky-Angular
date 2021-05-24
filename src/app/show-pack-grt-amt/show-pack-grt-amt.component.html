@@ -1,5 +1,9 @@
-<!-- <p>show-pack-grt-amt works!</p> -->
+<header>
+  <header class="col-lg-12">
+    <app-header></app-header>
+   </header>
 <br><br><br><br>
+<div class="container">
 <form class="form-group" [formGroup]="packForm" (ngSubmit)="packInfoGrtAmt(packForm.value)">
 <label><h3 class="ent">Enter Cost</h3></label><br><br>
 <span *ngIf="packForm.get('cost')?.touched">
@@ -41,3 +45,8 @@
 <!-- </div> -->
 <br>
 <br>
+</div>
+</div>
+<footer class="col-lg-12">
+  <app-footer></app-footer>
+  </footer>

@@ -14,4 +14,16 @@ table, th, td {
   .lst{
     color:rgb(230, 87, 87)
   }
+  footer{
+    height: 80px; 
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    position: relative;
+   
+  }
+  .container{
+      padding-bottom: 270px;
+  }
   

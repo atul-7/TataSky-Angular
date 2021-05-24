@@ -1,5 +1,7 @@
 .lst{
-    color:rgb(230, 87, 87)
+    color:rgb(230, 87, 87);
+    padding-top: 150px;
+    
   }
 
   .btn-primary{
@@ -8,17 +10,47 @@
     padding: 10px 20px;
 }
 div{
-    padding-top: 150px;
     font-size: 2rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-align: center;
     }
     .buttons{
-        position: absolute;
-        left:200px;
-        top: 120px;
+        padding-top: 20px;
     }
     a{
         color:white;
         text-decoration:none;
     }
+    footer{
+        height: 80px; 
+        align-items: center;
+        background-color: black;
+        color: white;
+        font-weight: 600;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .text{
+        padding-top: 150px;
+        font-size: 2rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        text-align: center;
+        color:rgb(230, 87, 87);
+        }
+        .buttons{
+            /* padding-top: 10px; */
+            font-size: 2rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            }
+            .custom{
+                color: teal;
+            }
+            .color{
+
+                color: #73C6B6;
+                -webkit-text-stroke: 2px #05BDBD;
+                
+            }
